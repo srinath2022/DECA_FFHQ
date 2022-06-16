@@ -10,6 +10,7 @@ from skimage.transform import estimate_transform, warp, resize, rescale
 from glob import glob
 
 from . import detectors
+import face_alignment
 
 
 # FFHQ Dataset
