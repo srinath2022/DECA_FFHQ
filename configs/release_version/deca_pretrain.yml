@@ -31,3 +31,5 @@ train:
   checkpoint_steps: 1000
   val_steps: 500
   eval_steps: 1000
+dataset:
+  training_data: ['ffhq']
