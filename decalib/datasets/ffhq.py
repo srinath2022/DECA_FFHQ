@@ -17,7 +17,9 @@ import face_alignment
 class FFHQDataset(Dataset):
     def __init__(self, image_size, scale, trans_scale = 0, isEval=False):
         self.image_size  = image_size
-        self.imagefolder = '/content/resized'
+        self.imagefolder = '/content/FFHQ-train-10K'
+        if isEval:
+            self.imagefolder = '/content/FFHQ-test-10K'
         self.images_list = os.listdir(self.imagefolder)
         self.scale = scale #[scale_min, scale_max]
         self.trans_scale = trans_scale # 0.5?
