@@ -44,6 +44,8 @@ def build_val(config, is_train=True):
         data_list.append(NoWDataset())
     if 'aflw2000' in config.eval_data:
         data_list.append(AFLW2000())
+    if 'ffhq' in config.training_data:
+        data_list.append(FFHQDataset(image_size=config.image_size, scale=[config.scale_min, config.scale_max], trans_scale=config.trans_scale))
     dataset = ConcatDataset(data_list)
 
     return dataset
