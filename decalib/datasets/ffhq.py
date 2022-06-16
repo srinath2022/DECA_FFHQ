@@ -21,7 +21,7 @@ class FFHQDataset(Dataset):
         self.images_list = os.listdir(self.imagefolder)
         self.scale = scale #[scale_min, scale_max]
         self.trans_scale = trans_scale # 0.5?
-        self.fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._3D, flip_input=False)
+        self.fa = face_alignment.FaceAlignment(face_alignment.LandmarksType._2D, flip_input=False)
 
     def __len__(self):
         return len(self.images_list)

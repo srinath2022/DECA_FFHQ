@@ -39,6 +39,7 @@ def main(cfg):
 
 if __name__ == '__main__':
     from decalib.utils.config import parse_args
+    torch.multiprocessing.set_start_method('spawn')
     cfg = parse_args()
     if cfg.cfg_file is not None:
         exp_name = cfg.cfg_file.split('/')[-1].split('.')[0]
