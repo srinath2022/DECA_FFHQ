@@ -102,4 +102,4 @@ class FFHQDataset(Dataset):
 
     def fan_landmarks(self, image):
         preds = self.fa.get_landmarks(image)
-        return preds
+        return np.array(preds)
