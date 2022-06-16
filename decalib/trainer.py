@@ -359,6 +359,7 @@ class Trainer(object):
         self.deca.train()
 
     def prepare_data(self):
+        print("Configuration ", self.cfg.dataset)
         self.train_dataset = build_datasets.build_train(self.cfg.dataset)
         self.val_dataset = build_datasets.build_val(self.cfg.dataset)
         logger.info('---- training data numbers: ', len(self.train_dataset))
