@@ -22,5 +22,6 @@ train:
   eval_steps: 1000
 dataset:
   training_data: ['ffhq']
+  eval_data: ['ffhq']
 
 # python main_train_deca_release.py --cfg configs/release_version/deca_coarse.yml

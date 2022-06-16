@@ -425,7 +425,7 @@ class TestData(Dataset):
         elif os.path.isfile(testpath) and (testpath[-3:] in ['mp4', 'csv', 'vid', 'ebm']):
             self.imagepath_list = video2sequence(testpath)
         else:
-            print('please check the input path')
+            print('please check the input path 1')
             exit()
             
         print('total {} images'.format(len(self.imagepath_list)))

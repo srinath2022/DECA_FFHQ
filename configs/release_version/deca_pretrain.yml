@@ -33,3 +33,4 @@ train:
   eval_steps: 1000
 dataset:
   training_data: ['ffhq']
+  eval_data: ['ffhq']
