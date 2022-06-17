@@ -18,6 +18,7 @@ class FFHQDataset(Dataset):
     def __init__(self, image_size, scale, trans_scale = 0, isEval=False):
         self.image_size  = image_size
         self.imagefolder = '/content/FFHQ-train-10K'
+        self.landmarks_folder = '/content/FFHQ-10K-landmarks'
         if isEval:
             self.imagefolder = '/content/FFHQ-test-10K'
         self.images_list = os.listdir(self.imagefolder)
@@ -33,7 +34,15 @@ class FFHQDataset(Dataset):
             imgname = self.images_list[idx]
             image_path = os.path.join(self.imagefolder, imgname)
             image = imread(image_path)
-            kpt = self.fan_landmarks(image)
+
+
+            # kpt = self.fan_landmarks(image)
+            landmarks_name = imgname.split('.')[0]+'.npy'
+            landmarks_path = os.path.join(self.landmarks_folder, landmarks_name)
+            # kpt = np.load(landmarks_path)[:,:2]
+            kpt = np.load(landmarks_path)
+
+
             if len(kpt.shape) != 2:
                 idx = np.random.randint(low=0, high=len(self.images_list))
                 continue
